@@ -7,6 +7,8 @@ createApp ({
 
             activeChat: 0,
 
+            newMessage: "",
+
             // oggetto mio profilo
             myProfile: {
 
@@ -64,6 +66,17 @@ createApp ({
         // al click di una chat
         openChat: function(i) {
             this.activeChat = i;
+        },
+
+        // input new message
+        newUserMessage: function(newMessage) {
+            this.contacts[this.activeChat].messages.push(
+                {
+                    message: newMessage,
+                    status: "sent",
+                }
+            );
+            this.newMessage= "";
         }
 
     },
