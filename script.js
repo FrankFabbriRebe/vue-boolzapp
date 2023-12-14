@@ -5,6 +5,8 @@ createApp ({
     data() {
         return {
 
+            activeChat: 0,
+
             // oggetto mio profilo
             myProfile: {
 
@@ -18,6 +20,24 @@ createApp ({
                 {
                     name: "Paola",
                     img: "img/avatar-boolzap/avatar_5.jpg",
+                    messages: [
+                        {
+                            date: '10/01/2020 15:30:55',
+                            message: 'Ciao Claudia, hai novità?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Non ancora',
+                            status: 'received'
+                        },
+                        {
+                            date: '10/01/2020 15:51:00',
+                            message: 'Nessuna nuova, buona nuova',
+                            status: 'sent'
+                        }
+                    ],
+            
                 },
 
                 {
@@ -40,6 +60,11 @@ createApp ({
     },
 
     methods: {
+
+        // al click di una chat
+        openChat: function(i) {
+            this.activeChat = i;
+        }
 
     },
 
