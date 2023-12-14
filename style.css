@@ -28,8 +28,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* debug */
-    border: 3px solid black;
 }
 
 /* container_top */
@@ -185,6 +183,7 @@ input   {
 .active_chat    {
     height: 90%;
     background-image: url(img/background.png);
+    padding: 10px;
 }
 
 .write_msg  {
@@ -220,4 +219,20 @@ input   {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.msg {
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.sent {
+    background: #D5F9BA;
+    margin-left: 60%;
+}
+
+.received {
+    background-color: #FFFFFF;
 }
