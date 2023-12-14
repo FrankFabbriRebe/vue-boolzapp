@@ -31,3 +31,70 @@
     /* debug */
     border: 3px solid black;
 }
+
+/* container_top */
+.container_top  {
+    height: 10%;
+    background-color: #EAEAEA;
+    display: flex;
+    background-color: #EAEAEA;
+}
+
+.top_left   {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid black;
+}
+
+.top_left_left  {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    
+}
+
+.top_left_right {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.top_right  {
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+
+.top_right_left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+.top_right_right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: end;
+    padding-right: 10px;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+}
