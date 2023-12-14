@@ -70,13 +70,16 @@ createApp ({
 
         // input new message
         newUserMessage: function(newMessage) {
-            this.contacts[this.activeChat].messages.push(
-                {
-                    message: newMessage,
-                    status: "sent",
-                }
-            );
-            this.newMessage= "";
+            if(this.newMessage.length > 0) {
+                this.contacts[this.activeChat].messages.push(
+                    {
+                        message: newMessage,
+                        status: "sent",
+                    }
+                );
+                this.newMessage= "";
+            }
+            
         }
 
     },
