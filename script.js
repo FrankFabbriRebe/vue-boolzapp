@@ -45,16 +45,19 @@ createApp ({
                 {
                     name: "Mario",
                     img: "img/avatar-boolzap/avatar_4.jpg",
+                    messages: [],
                 },
 
                 {
                     name: "Giacomo",
                     img: "img/avatar-boolzap/avatar_3.jpg",
+                    messages: [],
                 },
 
                 {
                     name: "Giorgio",
                     img: "img/avatar-boolzap/avatar_2.jpg",
+                    messages: [],
                 },
             ],
 
@@ -71,6 +74,10 @@ createApp ({
         // input new message
         newUserMessage: function(newMessage) {
             if(this.newMessage.length > 0) {
+                
+                // debug
+                console.log(this.contacts[this.activeChat].messages);
+
                 this.contacts[this.activeChat].messages.push(
                     {
                         message: newMessage,
