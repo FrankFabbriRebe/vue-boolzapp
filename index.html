@@ -112,7 +112,7 @@
                         <div class="chat_section">
 
                             <!-- chat -->
-                            <div v-for="(contact, i) in contacts" :key="i" class="chat">
+                            <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat">
                                 <div class="contact_img">
                                     <div class="circle">
                                         <img :src="contacts[i].img" alt="{{contacts[i].name}}">
@@ -132,8 +132,11 @@
 
                         <!-- active chat -->
                         <div class="active_chat">
-                            <div class="msg sent">ciao</div>
-                            <div class="msg received">ciao</div>
+                            <div v-for="(message, i) in contacts[activeChat].messages" class="msg">
+                                <div :class="{ 'received': message.status === 'received', 'sent': message.status === 'sent' }" >
+                                    {{contacts[activeChat].messages[i].message}}
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- write message -->
