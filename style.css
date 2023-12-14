@@ -4,3 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* background */
+.background {
+    position: relative;
+}
+
+.background_top {
+    height: 10vh;
+    background-color: #009688;
+}
+
+.background_bottom {
+    height: 90vh;
+    background-color: #DBDBD3;
+}
+
+/* container */
+.container  {
+    height: 90%;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* debug */
+    border: 3px solid black;
+}
