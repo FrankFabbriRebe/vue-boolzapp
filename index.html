@@ -133,7 +133,7 @@
                         <!-- active chat -->
                         <div class="active_chat">
                             <div v-for="(message, i) in contacts[activeChat].messages" class="msg">
-                                <div :class="{ 'received': message.status === 'received', 'sent': message.status === 'sent' }" >
+                                <div :class="{ 'received': message.status === 'received', 'sent': message.status === 'sent' }">
                                     {{contacts[activeChat].messages[i].message}}
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                 <i class="fa-regular fa-face-smile fa-xl" style="color: #b1b1b1;"></i>
                             </div>
                             <div class="input_msg">
-                                <input type="text" placeholder="Scrivi qui il tuo messaggio">
+                                <input @keyup.enter="newUserMessage(newMessage)" type="text" placeholder="Scrivi qui il tuo messaggio" v-model="newMessage">
                             </div>
                             <div class="record">
                                 <i class="fa-solid fa-microphone fa-xl" style="color: #b1b1b1;"></i>
