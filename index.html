@@ -104,7 +104,7 @@
                                 <button>
                                     <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #b1b1b1;"></i>
                                 </button>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" @input="filteredContacts" placeholder="Cerca o inizia una nuova chat" v-model="search">
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@
                         <div class="chat_section">
 
                             <!-- chat -->
-                            <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat">
+                            <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat" :class="{ 'hidden': contact.isVisible }">
                                 <div class="contact_img">
                                     <div class="circle">
                                         <img :src="contacts[i].img" alt="{{contacts[i].name}}">
