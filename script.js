@@ -91,7 +91,7 @@ createApp ({
             
         },
 
-        // risposta automatica
+        // automatic answer
         automaticAnswer: function(answer) {
             this.contacts[this.activeChat].messages.push(
                 {
@@ -99,7 +99,19 @@ createApp ({
                     status: "received",
                 }
             )
-        }
+        },
+
+        // delayedAutomaticAnswer
+        delayedAutomaticAnswer: function(answer) {
+            setTimeout(() => {
+                this.automaticAnswer(answer);
+            }, 3000);
+        },
+
+        handleEnterKey() {
+            this.newUserMessage(this.newMessage);
+            this.delayedAutomaticAnswer(this.answer);
+          },
 
     },
 
