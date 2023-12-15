@@ -192,6 +192,7 @@ input   {
     height: 90%;
     background-image: url(img/background.png);
     padding: 10px;
+    overflow-y: auto;
 }
 
 .write_msg  {
