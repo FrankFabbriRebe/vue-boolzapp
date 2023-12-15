@@ -145,7 +145,7 @@
                                 <i class="fa-regular fa-face-smile fa-xl" style="color: #b1b1b1;"></i>
                             </div>
                             <div class="input_msg">
-                                <input @keyup.enter="newUserMessage(newMessage)" type="text" placeholder="Scrivi qui il tuo messaggio" v-model="newMessage">
+                                <input @keyup.enter="newUserMessage(newMessage); automaticAnswer(answer)" type="text" placeholder="Scrivi qui il tuo messaggio" v-model="newMessage">
                             </div>
                             <div class="record">
                                 <i class="fa-solid fa-microphone fa-xl" style="color: #b1b1b1;"></i>
