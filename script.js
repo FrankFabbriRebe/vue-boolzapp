@@ -9,6 +9,8 @@ createApp ({
 
             newMessage: "",
 
+            answer: "OK",
+
             // oggetto mio profilo
             myProfile: {
 
@@ -87,6 +89,16 @@ createApp ({
                 this.newMessage= "";
             }
             
+        },
+
+        // risposta automatica
+        automaticAnswer: function(answer) {
+            this.contacts[this.activeChat].messages.push(
+                {
+                    message: answer,
+                    status: "received",
+                }
+            )
         }
 
     },
