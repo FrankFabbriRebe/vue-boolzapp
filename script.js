@@ -11,6 +11,8 @@ createApp ({
 
             answer: "OK",
 
+            search: "",
+
             // oggetto mio profilo
             myProfile: {
 
@@ -105,14 +107,23 @@ createApp ({
         delayedAutomaticAnswer: function(answer) {
             setTimeout(() => {
                 this.automaticAnswer(answer);
-            }, 3000);
+            }, 1000);
         },
 
+        // method that manages all the method when click enter
         handleEnterKey() {
             this.newUserMessage(this.newMessage);
             this.delayedAutomaticAnswer(this.answer);
-          },
+        },
 
+        filteredContacts: function() {
+            
+            this.contacts.forEach(contact => {
+                contact.isVisible = !contact.name.toLowerCase().includes(this.search.toLowerCase());
+            });
+            
+        }
+        
     },
 
     mounted() {
