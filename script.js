@@ -13,6 +13,8 @@ createApp ({
 
             search: "",
 
+            isClicked: false,
+
             // oggetto mio profilo
             myProfile: {
 
@@ -73,6 +75,7 @@ createApp ({
         // al click di una chat
         openChat: function(i) {
             this.activeChat = i;
+            this.isClicked = true;
         },
 
         // input new message

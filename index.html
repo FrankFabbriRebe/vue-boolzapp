@@ -39,9 +39,7 @@
 
                         <!-- top left left section  -->
                         <div class="top_left_left">
-                            <div class="circle">
                                 <img :src="myProfile.img" alt="myProfile.name">
-                            </div>
                             <div class="my_name">
                                 <span>{{myProfile.name}}</span>
                             </div>
@@ -60,10 +58,8 @@
                     <div class="top_right">
 
                         <!-- top right left -->
-                        <div class="top_right_left">
-                           <div class="circle">
-                                <img :src="contacts[activeChat].img" alt="">
-                            </div>
+                        <div class="top_right_left">                
+                                <img :src="contacts[activeChat].img" alt="contacts[activeChat].name">
                             <span>{{contacts[activeChat].name}}</span>
                         </div>
 
@@ -114,9 +110,7 @@
                             <!-- chat -->
                             <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat" :class="{ 'hidden': contact.isVisible }">
                                 <div class="contact_img">
-                                    <div class="circle">
                                         <img :src="contacts[i].img" alt="{{contacts[i].name}}">
-                                    </div>
                                 </div>
                                 <div class="contact_name">
                                     <strong>{{contacts[i].name}}</strong>

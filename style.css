@@ -96,9 +96,9 @@
     padding: 10px;
 }
 
-.circle img {
-    height: 100%;
-    width: 100%;
+img {
+    height: 50px;
+    border-radius: 50%;
 }
 
 /* main */
@@ -259,4 +259,8 @@ input   {
 
 .hidden {
     display: none;
+}
+
+.active {
+    background-color: grey;
 }
