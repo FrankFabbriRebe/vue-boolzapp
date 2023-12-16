@@ -28,6 +28,7 @@ createApp ({
                 {
                     name: "Paola",
                     img: "img/avatar-boolzap/avatar_5.jpg",
+                    isActive: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -51,18 +52,21 @@ createApp ({
                 {
                     name: "Mario",
                     img: "img/avatar-boolzap/avatar_4.jpg",
+                    isActive: false,
                     messages: [],
                 },
 
                 {
                     name: "Giacomo",
                     img: "img/avatar-boolzap/avatar_3.jpg",
+                    isActive: false,
                     messages: [],
                 },
 
                 {
                     name: "Giorgio",
                     img: "img/avatar-boolzap/avatar_2.jpg",
+                    isActive: false,
                     messages: [],
                 },
             ],
@@ -75,7 +79,14 @@ createApp ({
         // al click di una chat
         openChat: function(i) {
             this.activeChat = i;
-            this.isClicked = true;
+           
+            this.contacts.forEach((contact, index) => {
+                if (index === i) {
+                  contact.isActive = true;
+                } else {
+                  contact.isActive = false;
+                }
+              });
         },
 
         // input new message
