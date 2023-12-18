@@ -108,7 +108,7 @@
                         <div class="chat_section">
 
                             <!-- chat -->
-                            <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat" :class="{ 'hidden': contact.isVisible, 'active': contact.isActive }">
+                            <div @click="openChat(i)" v-for="(contact, i) in contacts" :key="i" class="chat" :class="{ 'hidden': contact.invisible, 'active': contact.isActive }">
                                 <div class="contact_img">
                                         <img :src="contacts[i].img" alt="{{contacts[i].name}}">
                                 </div>

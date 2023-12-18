@@ -28,7 +28,7 @@ createApp ({
                 {
                     name: "Paola",
                     img: "img/avatar-boolzap/avatar_5.jpg",
-                    isActive: false,
+                    invisible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -52,21 +52,21 @@ createApp ({
                 {
                     name: "Mario",
                     img: "img/avatar-boolzap/avatar_4.jpg",
-                    isActive: false,
+                    invisible: false,
                     messages: [],
                 },
 
                 {
                     name: "Giacomo",
                     img: "img/avatar-boolzap/avatar_3.jpg",
-                    isActive: false,
+                    invisible: false,
                     messages: [],
                 },
 
                 {
                     name: "Giorgio",
                     img: "img/avatar-boolzap/avatar_2.jpg",
-                    isActive: false,
+                    invisible: false,
                     messages: [],
                 },
             ],
@@ -133,7 +133,7 @@ createApp ({
         filteredContacts: function() {
             
             this.contacts.forEach(contact => {
-                contact.isVisible = !contact.name.toLowerCase().includes(this.search.toLowerCase());
+                contact.invisible = !contact.name.toLowerCase().includes(this.search.toLowerCase());
             });
             
         }
