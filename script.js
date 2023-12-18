@@ -91,45 +91,42 @@ createApp ({
 
         // input new message
         newUserMessage: function(newMessage) {
+
+            // all this method works only if this.newMessage.length > 0
             if(this.newMessage.length > 0) {
                 
-                // debug
-                console.log(this.contacts[this.activeChat].messages);
-
+                // add newMessage to messages array
                 this.contacts[this.activeChat].messages.push(
                     {
                         message: newMessage,
                         status: "sent",
                     }
                 );
+
+                // call method to get with delay the automatic answer
+                setTimeout(() => {
+                    this.automaticAnswer(this.answer);
+                }, 1000);
+                
+                // empty the newMessage input
                 this.newMessage= "";
             }
-            
+        
         },
 
-        // automatic answer
+        // method to get automatic answer
         automaticAnswer: function(answer) {
+
             this.contacts[this.activeChat].messages.push(
                 {
                     message: answer,
                     status: "received",
                 }
             )
+
         },
 
-        // delayedAutomaticAnswer
-        delayedAutomaticAnswer: function(answer) {
-            setTimeout(() => {
-                this.automaticAnswer(answer);
-            }, 1000);
-        },
-
-        // method that manages all the method when click enter
-        handleEnterKey() {
-            this.newUserMessage(this.newMessage);
-            this.delayedAutomaticAnswer(this.answer);
-        },
-
+        // method filter contacts based on search
         filteredContacts: function() {
             
             this.contacts.forEach(contact => {
